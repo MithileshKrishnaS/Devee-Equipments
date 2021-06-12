@@ -1,0 +1,342 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devee equipments</title>
+<link rel="icon" href="{% static 'images/logo/logo.jpg' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}">
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script>
+          function popup2()
+          {   
+    
+           var myVar = document.getElementById("name").value;
+           myVar=myVar+"."
+           var myVar1 = document.getElementById("pno").value;
+           myVar1=myVar1+"."
+           if (myVar[0]!=='.' && myVar1[0]!=='.' )
+           {
+             Swal.fire({
+              title: 'Thank you!',
+              text: 'Your booking was done successfully, We will reply back shortly',
+              icon: 'success',
+              confirmButtonText: 'ok'
+             })
+           }
+          }
+        </script>
+<style>
+ h3{
+      font-size: 30px;
+  }
+footer {
+   background-color: #f5f4f4;
+   padding: 25px;
+ }
+ 
+.swiper-container {
+  width: 1000px;
+  height: 400px;
+}
+
+.hero-image{
+  background-color: rgb(249, 252, 249); 
+    top:0;
+    width:100%;
+    z-index:100;
+}
+p{
+  font-size: 1.25em;
+}
+body{
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .w3-btn {width:150px;}
+  * {
+box-sizing: border-box;
+}
+.Slide {
+display: none;
+}
+.img1 {
+vertical-align: middle;
+width: 100%;
+height: 400px;
+}
+.slideContainer {
+max-width: 1200px;
+position: relative;
+margin: auto;
+}
+.prevBtn,
+.nextBtn {
+position: absolute;
+top: 50%;
+width: auto;
+padding: 10px;
+background-color: rgb(255, 255, 75);
+color: rgb(50, 0, 116);
+font-weight: bolder;
+font-size: 18px;
+}
+.nextBtn {
+right: 0;
+}
+.Caption {
+color: #fbff09;
+font-weight: bold;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+font-size: 25px;
+padding: 8px 12px;
+position: absolute;
+bottom: 8px;
+width: 100%;
+text-align: center;
+}
+.Navdot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: rgb(54, 5, 117);
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+.selected,
+.Navdot:hover {
+background-color: #d9ff00;
+}
+@media only screen and (max-width: 450px) {
+.prevBtn,
+.nextBtn,
+.Caption {
+font-size: 16px;
+}
+}
+
+footer {
+   background-color: #f5f4f4;
+   padding: 25px;
+ }
+ 
+.swiper-container {
+  width: 1000px;
+  height: 400px;
+}
+
+</style>
+</head>
+<body background="{% static 'images/background/background.jpg' %}">
+  <nav class="navbar navbar-py-3 py-lg-3 bg-dark text-white">
+    <a class="navbar-brand text-white" href="#">                
+      <h1 style="font-size: 2em; color: white;">  <img src="{% static 'images/logo/logo.jpg' %}" width="100" height="80" > DEVEE EQUIPMENTS </h1>
+    </a>
+  </nav>
+  <br>
+  <div class="container">    
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">Home &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span class="fas fa-home"></span></a>
+  <a href="{% url 'about' %}">About Us &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span class="fab fa-buysellads"></span></a>
+        <a href="{% url 'pro' %}">Product &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span class="fas fa-shopping-bag"></span></a>
+        <a href="{% url 'contact' %}">Contact &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span class="fas fa-address-card"></span></a>
+</div>
+
+<button type="button" class="openbtn" onclick="openNav()">
+  <span class="fas fa-bars" aria-hidden="true"></span> 
+</button>
+<br>
+
+<div> <br></div>
+
+<div class="container">
+  <div class="slideContainer">
+    <div class="Slide">
+    <img src="{% static 'images/carou/pump.jpg' %}" class="img1" />
+    <div class="Caption"></div>
+    </div>
+    <div class="Slide">
+    <img src="{% static 'images/carou/cwc.png' %}" class="img1" />
+    <div class="Caption"></div>
+    </div>
+    <div class="Slide">
+    <img src="{% static 'images/carou/gsm.png' %}" class="img1" />
+    <div class="Caption"></div>
+    </div>
+    <a class="prevBtn">&#10094;</a>
+    <a class="nextBtn">&#10095;</a>
+    </div>
+    <br />
+    <div style="text-align:center">
+    <span class="Navdot" onclick="currentSlide(1)"></span>
+    <span class="Navdot" onclick="currentSlide(2)"></span>
+    <span class="Navdot" onclick="currentSlide(3)"></span>
+    </div>
+    <script>
+    document.querySelector(".prevBtn").addEventListener("click", () => {
+    changeSlides(-1);
+    });
+    document.querySelector(".nextBtn").addEventListener("click", () => {
+    changeSlides(1);
+    });
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function changeSlides(n) {
+    showSlides((slideIndex += n));
+    }
+    function currentSlide(n) {
+    showSlides((slideIndex = n));
+    }
+    function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("Slide");
+    var dots = document.getElementsByClassName("Navdot");
+    if (n > slides.length) {
+    slideIndex = 1;
+    }
+    if (n < 1) {
+    slideIndex = slides.length;
+    }
+    Array.from(slides).forEach(item => (item.style.display = "none"));
+    Array.from(dots).forEach(
+    item => (item.className = item.className.replace(" selected", ""))
+    );
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " selected";
+    }
+    </script>
+  
+  
+  
+  
+  
+    <br>
+    <br>
+  <div class="container text-justify"> 
+    <div class="jumbotron bg-light text-justify">
+      <h2 style="color:rgb(99, 65, 252); font-size: 50px;"><b>ABOUT US : </b></h2> <br>
+      
+      
+      <div class="row">
+      <div class="col-md-6">
+         <img src="{% static 'images/about.jpg' %}" width="fit-content" height="300" class="card-img-top">
+      </div>
+      <div class="col-md-6">      
+        <p style="font-size: 1.25em;">
+          We are <b>Devee Equipments !</b> Deevee equipments established in 2015, is a leading technology driven company based at Coimbatore in Tamil Nadu, India. We are the
+          Sole Proprietorship based company that is involved in the manufacturing, wholesaling and trading of Water Level Controller, Water 
+          Pump Controller and Mobile Starter and many more.
+          </p>
+      </div>     
+      
+      </div>      
+      <p style="text-align: right;  font-size: 1.25rem;">
+        <a href="{% url 'about' %}" class="btn btn-dark text-white btn-outline-light btn-lg "  style="background-color:#9a4ef1; 
+        border-radius: 2em; " >Learn more</a>
+      </p>
+    </div>
+    <div class="jumbotron bg-light"> 
+      <h2 style="color: rgb(99, 65, 252);; font-size: 50px;"><b>PRODUCTS : </b></h2><br><br>
+  <div id="products">
+    
+    
+    <div class="row">
+      {% for product in products %}
+          {% if product.add_to_home == "yes" %}
+          <div class="col-sm-4">
+            <div class="card">		
+            <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="200" height="350">
+             <div class="card-body">
+                <h3>{{product.product_name}}</h3>
+                <br>
+                 <a href="{% url 'check' product.id %}" class="btn btn-danger text-white" >Get Best Price</a>
+                 <a href="{% url 'view' product.id %}" class="btn btn-warning text-white" >View</a>				
+              </div>
+             </div>
+          </div>
+         {% endif %}
+     {% endfor %}
+     </div>
+    
+     <br>
+     <br>
+     <br>
+    <p style="text-align: right;  font-size: 1.25rem;">
+      <a href="{% url 'pro' %}"  class="btn btn-dark text-white btn-outline-light btn-lg "  style="background-color:#9a4ef1; 
+      border-radius: 2em; ">More Products</a>
+    </p>
+  </div>
+</div>
+</div>
+</div>
+  </div>
+  <footer class="bg-dark">
+    <div class="container bg-dark text-white">
+      <div class="row">
+        <div class="col-md-3 footer-column">
+          <h4>About Us :</h4><br>
+          <p style="text-align: justify; font-size: .43cm;" class="text-muted"> 
+            Deevee equipments established in 2015, is a leading technology driven company based at Coimbatore in
+             Tamil Nadu, India. We are the Sole Proprietorship based company that is involved in the manufacturing, 
+             wholesaling and trading electronic products. </p>
+          
+        </div>
+        <div class="col-md-3 footer-column" style="text-align: center;">
+          <h4>Menu :</h4><br>
+          <a href="#" style="color: white; text-align: left; font-size: .43cm;"class="text-muted">Home</a><br>
+          <a href="{% url 'about' %}" style="color: white; text-align: left; font-size: .43cm;"class="text-muted">About Us</a><br>
+          <a href="{% url 'pro' %}" style="color: white; text-align: left; font-size: .43cm;"class="text-muted">Products</a><br>
+          <a href="{% url 'contact' %}" style="color: white; text-align: left; font-size: .43cm;"class="text-muted">Contact</a><br><br><br>
+        </div>
+        <div class="col-md-6 footer-column">
+          <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+            <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
+                var setting = {"height":300,"width":600,"zoom":17,"queryString":"Mettupalayam Road, Narasimhanaickenpalayam, Tamil Nadu, India","place_id":"Ej1NZXR0dXBhbGF5YW0gUm9hZCwgTmFyYXNpbWhhbmFpY2tlbnBhbGF5YW0sIFRhbWlsIE5hZHUsIEluZGlhIi4qLAoUChIJBQfOOlnuqDsRjdUrJjHEeeESFAoSCZ-Vsy2S9qg7EW-7jsZWiOEB","satellite":false,"centerCoord":[11.115806103120136,76.93569980000001],"cid":"0xe179c431262bd58d","lang":"en","cityUrl":"/india/coimbatore-38055","cityAnchorText":"Map of Coimbatore, South Kerala, India","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"471911"};
+                var d = document;
+                var s = d.createElement('script');
+                s.src = 'https://1map.com/js/script-for-user.js?embed_id=471911';
+                s.async = true;
+                s.onload = function (e) {
+                  window.OneMap.initMap(setting)
+                };
+                var to = d.getElementsByTagName('script')[0];
+                to.parentNode.insertBefore(s, to);
+              })();</script><a href="https://1map.com/map-embed">1 Map</a></div>
+        </div>
+     </div>
+  
+      <br>
+      <br>
+      
+      <div class="row text-center">
+        <div class="col-md-6 box">
+          <span class="copyright quick-links">Copyright &copy; Your Website <script>document.write(new Date().getFullYear())</script>
+          </span>
+        </div>
+        <div class="col-md-6 box">
+          <ul class="list-inline quick-links">
+            <li class="list-inline-item">
+              <a href="#" style="color: white;">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" style="color: white;">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</body>
+</html> 
